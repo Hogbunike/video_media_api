@@ -24,8 +24,6 @@ class Video(models.Model):
 class VideoChunk(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
     chunk_number = models.IntegerField()
-    chunk_file = models.FileField(upload_to='video_chunks/%Y/%m/%d/',
-                              validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
-    audio_chunk_file = models.FileField(upload_to='audio_chunks/%Y/%m/%d/',
-                                  validators=[FileExtensionValidator(allowed_extensions=['mp3'])], blank=True, null=True)
+    chunk_file = models.FileField(upload_to='video_chunks/%Y/%m/%d/',validators=[FileExtensionValidator(allowed_extensions=['mp4'])])
+    audio_chunk_file = models.FileField(upload_to='audio_chunks/%Y/%m/%d/',validators=[FileExtensionValidator(allowed_extensions=['mp3'])], blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
