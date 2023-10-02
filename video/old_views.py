@@ -62,7 +62,7 @@ class CreateListVideo(APIView):
         serializer = VideoSerializer(data=data)
         if serializer.is_valid():
             video_obj = serializer.save()
-            video_url = ()
+            video_url = ('https://videoapi-242i.onrender.com')
             video_obj.video_url = video_url
             video_obj.save()
 
